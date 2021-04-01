@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: react-test
+  labels: 
+    app: react-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: react-test
+  template:
+    metadata:
+      labels:
+        app: react-test
+    spec:
+      containers:
+      - name: react-container
+        image: wotkddl21/react-test
+        ports:
+        - containerPort: 3000
+        env:
+        - name: DATE
+          value: '2021-02-16'
+      imagePullSecrets:
+        - name: my-secret

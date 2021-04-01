@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata: 
+  name: react-service
+spec:
+  ports:
+    - name: "react-port"
+      port: 3000
+      protocol: TCP
+      targetPort: 3000
+      nodePort: 31111
+    - name: "backend-port"
+      targetPort: 31112
+      protocol: TCP
+      nodePort: 31112
+      port: 31112
+  selector:
+    app: react-test
+  type: NodePort

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7ae79dee1ab75a9857b24ef927f069f5&libraries=services"></script>
+    <!---
+      6d8d243664796a435e0e0e4fbf573c5b
+    -->
+
+
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>오늘은 빨래</title>
+  </head>
+  <body>
+    
+    <div id="root"></div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
+    <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
+    <script>
+      //$('#charge_kakao').click(function () {
+        function charge() {
+          // getter
+          alert("hello");
+          var IMP = window.IMP;
+          IMP.init('imp01487112');
+          var money = $('input[name="cp_item"]:checked').val();
+          var id = $('p[className="user-info"]').val();
+          
+  /*
+          IMP.request_pay({
+              pg: 'kakao',
+              merchant_uid: 'merchant_' + new Date().getTime(),
+  
+              name: '주문명 : 주문명 설정',
+              amount: money,
+              buyer_email: 'iamport@siot.do',
+              buyer_name: '구매자이름',
+              buyer_tel: '010-1234-5678',
+              buyer_addr: '인천광역시 부평구',
+              buyer_postcode: '123-456'
+          }, function (rsp) {
+              console.log(rsp);
+              if (rsp.success) {
+                  var msg = '결제가 완료되었습니다.';
+                  msg += '고유ID : ' + rsp.imp_uid;
+                  msg += '상점 거래ID : ' + rsp.merchant_uid;
+                  msg += '결제 금액 : ' + rsp.paid_amount;
+                  msg += '카드 승인번호 : ' + rsp.apply_num;
+                  $.ajax({
+                      type: "GET", 
+                      url: "/user/mypage/charge/point", //충전 금액값을 보낼 url 설정
+                      data: {
+                          "amount" : money
+                      },
+                  });
+              } else {
+                  var msg = '결제에 실패하였습니다.';
+                  msg += '에러내용 : ' + rsp.error_msg;
+              }
+              alert(msg);
+              document.location.href="/user/mypage/home"; //alert창 확인 후 이동할 url 설정
+          });
+          */
+//      });
+  };
+  </script>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  </body>
+</html>
