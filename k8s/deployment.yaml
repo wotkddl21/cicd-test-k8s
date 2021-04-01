@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: react-test
+  name: cicd-test
   labels: 
-    app: react-test
+    app: cicd-test
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: react-test
+      app: cicd-test
   template:
     metadata:
       labels:
-        app: react-test
+        app: cicd-test
     spec:
       containers:
-      - name: react-container
-        image: wotkddl21/react-test
+      - name: cicd-container
+        image: wotkddl21/cicd-test
         ports:
         - containerPort: 3000
         env:
