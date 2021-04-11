@@ -10,9 +10,14 @@ Jenkins와 Gitlab을 활용한 CI/CD pipeline을 구축하시려면 <a href="htt
 
 ``` shell
 cd react-test
+// application directory로 이동
 npm install
+// server dependency 설치
 cd ./client
 npm install
+// front-end dependency 설치
 cd ../
 npm run dev
+// server, front 동시 실행
 ```
+참고로 node v12에 맞춰 설계되었습니다.
