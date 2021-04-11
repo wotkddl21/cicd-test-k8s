@@ -8,4 +8,11 @@ Jenkins와 Gitlab을 활용한 CI/CD pipeline을 구축하시려면 <a href="htt
 
 물론, 위와 같은 pipeline을 설계하지 않고도 실행할 수 있습니다.
 
-
+``` shell
+cd react-test
+npm install
+cd ./client
+npm install
+cd ../
+npm run dev
+```
